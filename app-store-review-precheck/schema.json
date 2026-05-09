@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zhiyuxing.local/schemas/app-store-review-precheck-report.json",
+  "title": "App Store Review Precheck Report",
+  "description": "上架前自检输出结构，供 Agent 填写或与脚本校验对齐。条款号以 Apple App Review Guidelines 当期版本为准。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["app_summary", "sections", "blocking_issues"],
+  "properties": {
+    "app_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_liner", "has_subscription", "has_third_party_ai", "requires_login"],
+      "properties": {
+        "one_liner": {
+          "type": "string",
+          "description": "应用类型一句话（是否订阅、是否 AI、是否强制登录）"
+        },
+        "has_subscription": { "type": "boolean" },
+        "has_third_party_ai": { "type": "boolean" },
+        "requires_login": { "type": "boolean" }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "按 SKILL 章节逐项结论",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "status"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "purpose_strings",
+              "subscriptions",
+              "iap_sandbox",
+              "account_deletion",
+              "review_credentials",
+              "login_gate",
+              "third_party_ai",
+              "marketing_site_consistency"
+            ]
+          },
+          "title": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["pass", "gap", "na"]
+          },
+          "guideline_refs": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "如 5.1.1(ii)、3.1.2(c)"
+          },
+          "evidence": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "仓库内路径、配置键、或人工备注"
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "blocking_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["summary", "severity"],
+        "properties": {
+          "summary": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["must_fix_before_submit", "should_fix", "info_only"]
+          },
+          "suggested_fix": { "type": "string" }
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "信息不足时向用户追问的最小集合"
+    }
+  }
+}
