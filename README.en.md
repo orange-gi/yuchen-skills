@@ -1,6 +1,6 @@
 [中文](./README.md) · **English**
 
-# 🧰 yuchen-skills
+# 🧰 YuChen-Skills
 
 #### A small collection of Agent Skills I maintain — open-sourced for reuse
 

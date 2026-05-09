@@ -1,6 +1,6 @@
 **中文** · [English](./README.en.md)
 
-# 🧰 yuchen-skills
+# 🧰 YuChen-Skills
 
 #### 个人维护的 Agent Skills 合集，顺手开源
 
