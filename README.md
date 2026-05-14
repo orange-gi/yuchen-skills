@@ -5,7 +5,7 @@
 #### 个人维护的 Agent Skills 合集，顺手开源
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-1-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-4-10B981?style=for-the-badge)](#-skills)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Cursor](https://img.shields.io/badge/Cursor-Skill-000000?style=flat-square&logo=cursor&logoColor=white)
@@ -27,6 +27,9 @@
 | 名字 | 一句话 | 讲解 |
 |---|---|---|
 | 🍎 [**app-store-review-precheck**](#app-store-review-precheck) | 提审前对照 Apple Guideline 扫代码与配置，列出通过 / 待补 / 阻塞；可按 `schema.json` 输出结构化报告 | [上架复盘长文](https://github.com/orange-gi/zhiyuxing/blob/main/docs/开发记录博客/六个月开发四次审核知与行上架iOS商店.md)（知与行仓库） |
+| ✍️ [**zhiyuxing-writer**](#zhiyuxing-writer) | 知与行公众号长文写作 skill，按该账号风格生成文章并进行四层自检 | [content_methodology.md](./zhiyuxing-writer/references/content_methodology.md) |
+| 👁️ [**minimax-vision**](#minimax-vision) | MiniMax Vision 图片理解，支持单图分析和双图对比 | [platform.minimaxi.com](https://platform.minimaxi.com/docs/coding-plan/mcp-guide) |
+| 📝 [**dev-report**](#dev-report) | 根据代码修改生成开发报告，记录问题背景、解决方案和总结 | [模板来源](./develop-report.md) |
 
 ---
 
@@ -67,6 +70,92 @@
 - 不代填 Connect、不代替后台操作、不承诺过审；条款解释以 [App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) 当期版本为准。
 
 → [SKILL.md](./app-store-review-precheck/SKILL.md) · [schema.json](./app-store-review-precheck/schema.json) · [上架复盘长文](https://github.com/orange-gi/zhiyuxing/blob/main/docs/开发记录博客/六个月开发四次审核知与行上架iOS商店.md)
+
+---
+
+### zhiyuxing-writer
+
+> 公众号长文写作 · *「有见识的普通人在认真聊一件打动他的事。」*
+
+知与行公众号长文写作 skill，按照该账号的风格生成文章，并进行四层自检确保"活人感"。
+
+**适合**
+
+- 撰写公众号长文、续写文章、根据素材产出长文
+- 用户丢过来 PDF、brief、新闻链接、语音转文字等素材说"帮我写篇文章"
+
+**不适合**
+
+- 短内容（小红书帖子、推特、朋友圈）
+- 纯标题摘要生成
+
+**核心功能**
+
+- 理解素材与选题判断（HKR 质检）
+- 明确 AI 与人的角色边界
+- 五种文章原型写作方法
+- 四层自检体系（L1 硬性规则 → L4 活人感终审）
+
+→ [SKILL.md](./zhiyuxing-writer/SKILL.md) · [content_methodology.md](./zhiyuxing-writer/references/content_methodology.md) · [style_examples.md](./zhiyuxing-writer/references/style_examples.md)
+
+---
+
+### minimax-vision
+
+> 图片理解 · *「MiniMax Vision 图片理解，支持单图分析和双图对比。」*
+
+MiniMax Vision 图片理解 skill，支持分析单张图片内容和对比两张图片差异。
+
+**适合**
+
+- 分析截图、识别界面问题
+- 对比两张图片的差异
+- 理解图片中的内容
+
+**命令**
+
+```bash
+# 分析单张图片
+python minimax-vision/minimax_vision.py analyze screenshot.png "描述图片内容"
+
+# 对比两张图片
+python minimax-vision/minimax_vision.py compare baseline.png actual.png
+```
+
+→ [SKILL.md](./minimax-vision/SKILL.md) · [minimax_vision.py](./minimax-vision/minimax_vision.py) · [官方文档](https://platform.minimaxi.com/docs/coding-plan/mcp-guide)
+
+---
+
+### dev-report
+
+> 开发报告编写 · *「根据代码修改生成开发报告，记录问题背景、解决方案和总结。」*
+
+根据代码修改内容生成结构化开发报告，包含根因分析、方案对比和总结。
+
+**报告结构**
+
+```
+记录日期：YYYY-MM-DD
+
+## 问题背景
+
+## 问题列表
+
+### 问题一
+**根因分析**（链式证据级定位，最多3轮）
+**方案**：短期方案 vs 长远方案
+**采纳方案**：
+**补充用例**：
+
+## 小结
+```
+
+**适合**
+
+- 代码修改完成后编写开发报告
+- 记录问题分析和解决方案
+
+→ [SKILL.md](./dev-report/SKILL.md) · [模板来源](./develop-report.md)
 
 ---
 
