@@ -30,6 +30,7 @@
 | ✍️ [**zhiyuxing-writer**](#zhiyuxing-writer) | 知与行公众号长文写作 skill，按该账号风格生成文章并进行四层自检 | [content_methodology.md](./zhiyuxing-writer/references/content_methodology.md) |
 | 👁️ [**minimax-vision**](#minimax-vision) | MiniMax Vision 图片理解，支持单图分析和双图对比 | [platform.minimaxi.com](https://platform.minimaxi.com/docs/coding-plan/mcp-guide) |
 | 📝 [**dev-report**](#dev-report) | 根据代码修改生成开发报告，记录问题背景、解决方案和总结 | [模板来源](./develop-report.md) |
+| 🔎 [**xquik-social-research**](#xquik-social-research) | 用 Xquik 的 X 数据分析受众主题、创作者分层、发布信号与竞品动态 | [docs.xquik.com](https://docs.xquik.com/api-reference/introduction) |
 
 ---
 
@@ -156,6 +157,27 @@ python minimax-vision/minimax_vision.py compare baseline.png actual.png
 - 记录问题分析和解决方案
 
 → [SKILL.md](./dev-report/SKILL.md) · [模板来源](./develop-report.md)
+
+---
+
+### xquik-social-research
+
+> X 社交研究 · *把 Xquik 数据整理成有证据的受众和市场信号。*
+
+分析 Xquik 导出的 JSON / CSV、REST API 响应或 MCP 输出，总结 X 对话主题、创作者分层、发布信号与竞品动态。
+
+**适合**
+
+- 基于 X 帖子、账号、搜索、趋势或粉丝数据做受众研究
+- 发布前调研、竞品监控、创作者发现
+- 把 Xquik 数据整理成内容和活动建议
+
+**不适合**
+
+- 垃圾信息、凭证收集或绕过访问控制
+- 脱离用户提供或 Xquik 返回数据的泛化判断
+
+→ [SKILL.md](./xquik-social-research/SKILL.md) · [Xquik API 文档](https://docs.xquik.com/api-reference/introduction) · [MCP 文档](https://docs.xquik.com/mcp/overview)
 
 ---
 

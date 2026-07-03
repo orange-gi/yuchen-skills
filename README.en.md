@@ -30,6 +30,7 @@ Each skill was battle-tested in a real project (including App Store review lesso
 | ✍️ [**zhiyuxing-writer**](#zhiyuxing-writer) | Zhiyuxing's WeChat public account long-form writing skill with 4-layer self-review | [content_methodology.md](./zhiyuxing-writer/references/content_methodology.md) |
 | 👁️ [**minimax-vision**](#minimax-vision) | MiniMax Vision image understanding, supports single image analysis and image comparison | [platform.minimaxi.com](https://platform.minimaxi.com/docs/coding-plan/mcp-guide) |
 | 📝 [**dev-report**](#dev-report) | Generate development reports from code changes, record problem background and solutions | [Template source](./develop-report.md) |
+| 🔎 [**xquik-social-research**](#xquik-social-research) | Analyze Xquik X data for audience themes, creator segments, launch signals, and competitor activity | [docs.xquik.com](https://docs.xquik.com/api-reference/introduction) |
 
 ---
 
@@ -156,6 +157,27 @@ Record Date: YYYY-MM-DD
 - Recording problem analysis and solutions
 
 → [SKILL.md](./dev-report/SKILL.md) · [Template source](./develop-report.md)
+
+---
+
+### xquik-social-research
+
+> X social research · *Turn Xquik data into evidence-backed audience and market signals.*
+
+Analyze Xquik exports, REST API responses, or MCP output to summarize X conversation themes, creator segments, launch signals, and competitor activity.
+
+**Good for**
+
+- Audience research from X posts, profiles, searches, trends, or follower data
+- Launch planning, competitor monitoring, and creator discovery
+- Turning Xquik data into content and campaign ideas
+
+**Not good for**
+
+- Spam, credential collection, or access-control bypass
+- Claims that are not tied to supplied or returned Xquik data
+
+→ [SKILL.md](./xquik-social-research/SKILL.md) · [Xquik API docs](https://docs.xquik.com/api-reference/introduction) · [MCP docs](https://docs.xquik.com/mcp/overview)
 
 ---
 
